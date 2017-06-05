@@ -25,7 +25,7 @@ static void print_nodes(tree_t *t)
 
 int main(void)
 {
-    tree_t *tree   = new_tree(compare_mem, sizeof(tuple_t), 1L);
+    tree_t *tree   = new_tree(compare_mem, sizeof(tuple_t), 1UL);
     tuple_t vals[] = {{3, 1}, {5, 8}, {1, 4}};
 
     for (int i = 0; i < VSIZE(vals); i++) {
