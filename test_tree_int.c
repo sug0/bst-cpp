@@ -35,6 +35,8 @@ int main(void)
 
     print_nodes(tree);
 
+    putchar('\n');
+
     if (tree_contains(tree, &val))
         printf("tree contains %d\n", val);
     else

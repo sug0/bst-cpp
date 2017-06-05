@@ -30,13 +30,43 @@ public:
         return this->t->nmemb;
     }
 
+    tree_node_t *root()
+    {
+        return this->t->root;
+    }
+
     void insert(void *data)
     {
         tree_insert(this->t, data);
     }
 
-    tree_node_t *root()
+    bool contains(void *data)
     {
-        return this->t->root;
+        return tree_contains(this->t, data);
+    }
+
+    size_t depth()
+    {
+        return tree_depth(this->t);
+    }
+
+    size_t size()
+    {
+        return tree_size(this->t);
+    }
+
+    bool is_empty()
+    {
+        return tree_is_empty(this->t);
+    }
+
+    void *min()
+    {
+        return tree_min(this->t);
+    }
+
+    void *max()
+    {
+        return tree_max(this->t);
     }
 };

@@ -1,5 +1,6 @@
 #include <cmath>
 #include <ctime>
+#include <assert.h>
 #include "tree.hpp"
 
 struct Point
@@ -62,7 +63,18 @@ int main()
         delete p;
     }
 
+    assert(t->size() == 10);
+
     print_nodes(t);
+
+    printf("\ndepth of tree: %lu\n", t->depth());
+
+    p = (Point *)t->min();
+    printf("min point: (%lf, %lf)\n", p->x, p->y);
+
+    p = (Point *)t->max();
+    printf("min point: (%lf, %lf)\n", p->x, p->y);
+
     delete t;
 
     return 0;
