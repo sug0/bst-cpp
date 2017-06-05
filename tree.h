@@ -33,6 +33,12 @@ extern int compare_int(void *x, void *y, size_t nmemb, size_t size);
 extern int compare_char(void *x, void *y, size_t nmemb, size_t size);
 extern int compare_mem(void *x, void *y, size_t nmemb, size_t size);
 extern void tree_insert(tree_t *t, void *data);
+extern int tree_contains(tree_t *tree, void *data);
+extern size_t tree_depth(tree_t *t);
+extern size_t tree_size(tree_t *t);
+extern int tree_is_empty(tree_t *t);
+extern void *tree_min(tree_t *t);
+extern void *tree_max(tree_t *t);
 extern void destroy_tree(tree_t *t);
 
 #ifdef __cplusplus

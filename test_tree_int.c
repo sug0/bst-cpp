@@ -1,5 +1,6 @@
 #include <stdio.h>
 #include <time.h>
+#include <assert.h>
 #include "tree.h"
 
 static void __print_nodes(tree_node_t *n)
@@ -30,7 +31,17 @@ int main(void)
         tree_insert(tree, &val);
     }
 
+    assert(tree_size(tree) == 10);
+
     print_nodes(tree);
+
+    if (tree_contains(tree, &val))
+        printf("tree contains %d\n", val);
+    else
+        printf("tree doesn't contain %d\n", val);
+
+    printf("tree has depth %lu, and min val %d\n", tree_depth(tree), *(int *)tree_min(tree));
+
     destroy_tree(tree);
 
     return 0;
